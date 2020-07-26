@@ -32,3 +32,8 @@ curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip
 unzip awscliv2.zip
 sudo ./aws/install
 
+
+# Install AWS CLI EBCli
+apt install python3-pip
+pip3 install awsebcli --upgrade --user
+pip3 install awsebcli --upgrade --user
