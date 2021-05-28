@@ -55,4 +55,11 @@ curl --silent --location "https://github.com/weaveworks/eksctl/releases/latest/d
 sudo mv /tmp/eksctl /usr/local/bin
 eksctl version
 
+# Instalação do aws-iam-authenticator
+curl -o aws-iam-authenticator https://amazon-eks.s3.us-west-2.amazonaws.com/1.16.8/2020-04-16/bin/linux/amd64/aws-iam-authenticator
 
+chmod +x ./aws-iam-authenticator
+
+sudo cp ./aws-iam-authenticator /usr/local/bin/aws-iam-authenticator
+
+aws-iam-authenticator help
