@@ -37,3 +37,8 @@ sudo ./aws/install
 apt install python3-pip
 pip3 install awsebcli --upgrade --user
 pip3 install awsebcli --upgrade --user
+
+# Install kOps - Kubernetes Operations
+curl -Lo kops https://github.com/kubernetes/kops/releases/download/$(curl -s https://api.github.com/repos/kubernetes/kops/releases/latest | grep tag_name | cut -d '"' -f 4)/kops-linux-amd64
+chmod +x kops
+sudo mv kops /usr/local/bin/kops
