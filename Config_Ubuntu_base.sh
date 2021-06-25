@@ -63,3 +63,9 @@ chmod +x ./aws-iam-authenticator
 sudo cp ./aws-iam-authenticator /usr/local/bin/aws-iam-authenticator
 
 aws-iam-authenticator help
+
+# Install kind
+curl -Lo ./kind https://kind.sigs.k8s.io/dl/v0.11.1/kind-linux-amd64
+chmod +x ./kind
+sudo mv ./kind /usr/local/bin/kind
+kind version
