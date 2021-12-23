@@ -18,13 +18,9 @@ sudo snap install dynamodb-gui-client
 sudo snap install mysql-workbench-community --candidate
 
 sudo apt install git telnet apt-transport-https curl -y
-
 curl -s https://brave-browser-apt-release.s3.brave.com/brave-core.asc | sudo apt-key --keyring /etc/apt/trusted.gpg.d/brave-browser-release.gpg add -
-
 echo "deb [arch=amd64] https://brave-browser-apt-release.s3.brave.com/ stable main" | sudo tee /etc/apt/sources.list.d/brave-browser-release.list
-
 sudo apt update -y
-
 sudo apt install brave-browser -y
 
 # Install AWS CLI V2
@@ -32,17 +28,14 @@ curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip
 unzip awscliv2.zip
 sudo ./aws/install
 
-
 # Install AWS CLI EBCli
 sudo apt install python3-pip
 pip3 install awsebcli --upgrade --user
-
 
 # Install kOps - Kubernetes Operations
 curl -Lo kops https://github.com/kubernetes/kops/releases/download/$(curl -s https://api.github.com/repos/kubernetes/kops/releases/latest | grep tag_name | cut -d '"' -f 4)/kops-linux-amd64
 chmod +x kops
 sudo mv kops /usr/local/bin/kops
-
 
 # Install Install kubectl binary 
 curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"
@@ -57,11 +50,8 @@ eksctl version
 
 # Instalação do aws-iam-authenticator
 curl -o aws-iam-authenticator https://amazon-eks.s3.us-west-2.amazonaws.com/1.16.8/2020-04-16/bin/linux/amd64/aws-iam-authenticator
-
 chmod +x ./aws-iam-authenticator
-
 sudo cp ./aws-iam-authenticator /usr/local/bin/aws-iam-authenticator
-
 aws-iam-authenticator help
 
 # Install kind
@@ -69,3 +59,8 @@ curl -Lo ./kind https://kind.sigs.k8s.io/dl/v0.11.1/kind-linux-amd64
 chmod +x ./kind
 sudo mv ./kind /usr/local/bin/kind
 kind version
+
+
+# Install TFenv
+git clone https://github.com/tfutils/tfenv.git ~/.tfenv
+ln -s ~/.tfenv/bin/* /usr/local/bin
